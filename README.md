@@ -3,8 +3,8 @@ CyberArk custom CPM web plugins.
 
 ## What to do
 1. Copy everything to CPM installation directory (use bin folder as reference, can exclude /bin/examples)
-2. Edit /bin/template.ps1, /bin/seleniumprocess.ini and /bin/seleniumprompts.ini
-3. Create a platform that and point prompts and process files to the one we use here.
+2. Edit /bin/template.ps1, /bin/Seleniumprocess.ini and /bin/Seleniumprompts.ini
+3. Create a platform that and points prompts and process files to the one we use here.
 4. Test by running "run.cmd verifypass", "run.cmd logon", "run.cmd changepass". Remember to update cpmparm.ini accordingly.
 
 ## Things to note
