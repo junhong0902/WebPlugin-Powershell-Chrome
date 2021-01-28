@@ -7,6 +7,7 @@ CyberArk custom CPM web plugins.
 3. Inside process file, change the script location/name under Start Powershell script section
 4. Make sure that the parameters pass to the PS script isnt missing, otherwise the order of the parameters will be wrong
 5. PS template include 3 sections (verifypass, changepass, logon). Can add more as required.
+6. Double check all init variables in PS scripts are all in place.
 
 
 ## Commonly used functions
