@@ -19,5 +19,5 @@ function EndScript
 	write-host $Output
 
     # Return result
-    return 'EndScript'
+    return 'PowerShell Script Ended'
 }

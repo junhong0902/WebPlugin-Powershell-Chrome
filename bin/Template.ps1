@@ -2,7 +2,7 @@
 ## Load Dependencies
 ##-------------------------------------------
 $PathToFolder = 'C:\Program Files (x86)\CyberArk\Password Manager\bin\lib'
-[System.Reflection.Assembly]::LoadFrom("$PathToFolder\WebDriver.dll" -f $PathToFolder)
+[System.Reflection.Assembly]::LoadFrom($PathToFolder + "\WebDriver.dll" -f $PathToFolder) | Out-Null
 if ($env:Path -notcontains ";$PathToFolder" ) {
     $env:Path += ";$PathToFolder"
 }
@@ -13,7 +13,7 @@ if ($env:Path -notcontains ";$PathToFolder" ) {
 ## Load Script Libraries
 ##-------------------------------------------
 # Custom scripts/functions, add more as needed.
-$lib_home = "$PathToFolder\modules\"
+$lib_home = $PathToFolder + "\modules\"
 Get-ChildItem ($lib_home + "*.ps1") | ForEach-Object {. (Join-Path $lib_home $_.Name)}
 
 
