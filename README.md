@@ -1,4 +1,4 @@
-# WebPlugin-Powershell
+# CyberArk-WebPlugin-Powershell-Selenium-Chrome
 CyberArk custom CPM web plugins.
 
 ## Things to note
