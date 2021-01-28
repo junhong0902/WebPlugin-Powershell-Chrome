@@ -15,7 +15,7 @@ CyberArk custom CPM web plugins.
 5. PS template include 3 sections (verifypass, changepass, logon). Can add more as required.
 6. Double check all init variables in PS script are all in place.
 7. Make sure the Dependencies path is correct in PS script
-8. **Avoid special characters!!!**
+8. **Password generation should avoid special characters!!!**
 
 
 ## Commonly used functions
