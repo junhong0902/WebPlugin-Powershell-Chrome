@@ -19,7 +19,7 @@ CyberArk custom CPM web plugins.
 
 
 ## Commonly used functions
-*More functions can be found via webdriver.xml (inside lib folder)*
+*More functions can be found via webdriver.xml (in lib folder)*
 ##### Input selection
 ```
 $ChromeDriver.FindElementById('')
