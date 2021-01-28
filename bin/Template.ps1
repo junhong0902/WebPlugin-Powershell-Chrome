@@ -83,7 +83,6 @@ switch($strActionName)
             # No action required, if failed at try section will execute end function.
             # EndScript with second parameter '1' means no logout required.
 			EndScript 'Unable to connect to the remote server' 1 
-			
 		}
 		
         # Continue by find and enter password.
@@ -98,7 +97,6 @@ switch($strActionName)
 		catch
 		{
 			EndScript '403 - Forbidden' 1
-            
 		}
         
         # If successful, return success code to cpm
