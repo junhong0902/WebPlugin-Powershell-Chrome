@@ -12,7 +12,7 @@ CPM (TPC) -> (SPAWN)PowerShell Script -> PowerShell output matching prompts file
 
 ## Things to note
 1. Make sure to use the latest chrome driver that matches your chrome's version, copy it under lib folder.
-2. (Optional)Rename the prompt and process files.
+2. (Optional) Rename the prompt and process files.
 3. Inside process file, change the script path under Start Powershell script section.
 4. Make sure that the parameters pass to the PS script isn't missing or empty, otherwise the order of the parameters will be wrong.
 5. PS template include 3 sections (verifypass, changepass, logon). Can add more as needed.
