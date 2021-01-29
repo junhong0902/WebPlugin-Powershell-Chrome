@@ -8,7 +8,7 @@ CPM (TPC) -> (SPAWN)PowerShell Script -> PowerShell output matching prompts file
 1. Copy everything to CPM installation directory (use bin folder as reference, can exclude /bin/examples)
 2. Edit /bin/template.ps1, /bin/Seleniumprocess.ini and /bin/Seleniumprompts.ini
 3. Create a platform and points prompts and process files to the one we use here.
-4. Test by running "run.cmd verifypass", "run.cmd logon", "run.cmd changepass". Remember to update cpmparm.ini accordingly.
+4. Test each stages in PS by running "run.cmd verifypass", "run.cmd logon", "run.cmd changepass". Remember to update cpmparm.ini accordingly.
 
 ## Things to note
 1. Make sure to use the latest chrome driver that matches your chrome's version, copy it under lib folder.
