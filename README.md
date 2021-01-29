@@ -22,7 +22,7 @@ CPM (TPC) -> (SPAWN)PowerShell Script -> PowerShell output matching prompts file
 
 
 ## Commonly used functions
-*More functions can be found via webdriver.xml (in lib folder)*
+*More functions can be found in webdriver.xml (in lib folder)*
 ##### Input selection
 ```
 $ChromeDriver.FindElementById('')
