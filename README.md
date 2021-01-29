@@ -47,7 +47,7 @@ $ChromeDriver.FindElementByXPath('//*[@id="main"]/div[2]/div[1]/article/h2/a').C
 $ChromeDriver.FindElementsById('user_login').SendKeys('yourlogin@domain.com')
 ```
 
-##### Send ENTER or TAB (Always start with a tab, use 'body' to always able to find the element
+##### Send ENTER or TAB (Start by locating an element, use 'body' if not able to find any element)
 ```
 $ChromeDriver.FindElementByTagName('body').SendKeys([OpenQA.Selenium.Keys]::TAB + [OpenQA.Selenium.Keys]::ENTER)
 ```
