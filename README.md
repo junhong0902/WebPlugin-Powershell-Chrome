@@ -1,7 +1,7 @@
 # CyberArk-WebPlugin-Powershell-Selenium-Chrome
 CyberArk custom CPM web plugins.
 
-CPM (TPC) -> (SPAWN)PowerShell Script
+CPM (TPC) -> (SPAWN)PowerShell Script -> PowerShell output matching prompts file -> CPM (Success/Failure)
 
 ## What to do
 1. Copy everything to CPM installation directory (use bin folder as reference, can exclude /bin/examples)
