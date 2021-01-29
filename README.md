@@ -1,6 +1,7 @@
 # CyberArk-WebPlugin-Powershell-Selenium-Chrome
 CyberArk custom CPM web plugins.
 
+#### Process Flow:
 CPM (TPC) -> (SPAWN)PowerShell Script -> PowerShell output matching prompts file -> CPM (Success/Failure)
 
 ## What to do
