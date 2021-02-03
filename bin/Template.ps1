@@ -114,8 +114,16 @@ switch($strActionName)
 
 		try
 		{
-            # Verify by seaching username element, can directly sendkeys. Here we use logon username
-			# Ex. $ChromeDriver.FindElementById('username_Id').SendKeys($strLogonUserName)
+            # Verify by seaching username element, can directly sendkeys.
+            # Check if logon account exists
+            if ($strLogonUserName)
+            {
+	            # Ex.$ChromeDriver.FindElementById('Username_Id').SendKeys($strUserName)
+            }
+            else 
+            {
+                # Ex. $ChromeDriver.FindElementById('username_Id').SendKeys($strLogonUserName)
+            }
 		}
 		catch
 		{
@@ -123,8 +131,16 @@ switch($strActionName)
 			EndScript 'Unable to connect to the remote server' 1
 		}
 		
-		# Continue by find and enter password.
-		# Ex. $ChromeDriver.FindElementById('Password_Id').SendKeys($strLogonPwd)
+		### Continue by find and enter password.
+        if ($strLogonUserName)
+        {
+	        # Ex.$ChromeDriver.FindElementById('password_Id').SendKeys($strPwd)
+        }
+        else 
+        {
+            # Ex. $ChromeDriver.FindElementById('password_Id').SendKeys($strLogonPwd)
+        }
+
         # Ex. $ChromeDriver.FindElementById('submit_button').Click()
         # Sleep(5)
 
@@ -158,7 +174,7 @@ switch($strActionName)
 		{
             # Verify by seaching username element, can directly sendkeys.
             # Check if logon account exists
-            if ($strLogonUserName -eq "" )
+            if ($strLogonUserName)
             {
 	            # Ex.$ChromeDriver.FindElementById('Username_Id').SendKeys($strUserName)
             }
@@ -174,7 +190,7 @@ switch($strActionName)
 		}
 		
 		### Continue by find and enter password.
-        if ($strLogonUserName -eq "" )
+        if ($strLogonUserName)
         {
 	        # Ex.$ChromeDriver.FindElementById('password_Id').SendKeys($strPwd)
         }
