@@ -104,7 +104,7 @@ switch($strActionName)
 				
     }
 
-    # If logon account required, here CPM verify logon account can login
+    # If logon account required, here CPM verify if logon account can login. If no logon account, here should use strUserName and strPwd instead.
 	'Logon'
     {
         # Start a chrome tab and load URL
@@ -150,7 +150,10 @@ switch($strActionName)
 		$ChromeDriver = New-Object OpenQA.Selenium.Chrome.ChromeDriver($ChromeOptions)
 		$ChromeDriver.Url = $FullLoginURL
 		Sleep(3)
-
+		
+		
+		# Reuse logon phase
+		<#
 		try
 		{
             # Verify by seaching username element, can directly sendkeys.
@@ -192,6 +195,7 @@ switch($strActionName)
 		{
 			EndScript '403 - Forbidden' 1
 		}
+		#>
 		
 		Sleep(3)
 
