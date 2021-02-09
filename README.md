@@ -54,13 +54,13 @@ $ChromeDriver.FindElementByTagName('body').SendKeys([OpenQA.Selenium.Keys]::TAB 
 
 ## Drivers
 
-##### Selenium
+#### Selenium
 Download and extract it with 7zip. Copy the .dll and .xml files under lib folder.
 ```
 https://www.nuget.org/packages/Selenium.WebDriver
 ```
 
-##### Chrome 
+#### Chrome 
 ```
 https://sites.google.com/a/chromium.org/chromedriver/
 ```
