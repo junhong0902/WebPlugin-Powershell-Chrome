@@ -51,3 +51,16 @@ $ChromeDriver.FindElementsById('user_login').SendKeys('yourlogin@domain.com')
 ```
 $ChromeDriver.FindElementByTagName('body').SendKeys([OpenQA.Selenium.Keys]::TAB + [OpenQA.Selenium.Keys]::ENTER)
 ```
+
+## Drivers
+
+##### Selenium
+Download and extract it with 7zip. Copy the .dll and .xml files under lib folder.
+```
+https://www.nuget.org/packages/Selenium.WebDriver
+```
+
+##### Chrome 
+```
+https://sites.google.com/a/chromium.org/chromedriver/
+```
