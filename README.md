@@ -55,7 +55,7 @@ $ChromeDriver.FindElementByTagName('body').SendKeys([OpenQA.Selenium.Keys]::TAB 
 ## Drivers
 
 #### Selenium
-Download and extract it with 7zip. Copy the .dll and .xml files under lib folder.
+Download and extract it with 7zip. Copy the .dll and .xml files with the correct .net version under lib folder.
 ```
 https://www.nuget.org/packages/Selenium.WebDriver
 ```
