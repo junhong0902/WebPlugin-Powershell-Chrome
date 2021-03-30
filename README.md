@@ -55,14 +55,14 @@ $ChromeDriver.FindElementByTagName('body').SendKeys([OpenQA.Selenium.Keys]::TAB 
 ##### Verify if element exists
 ```
 if ($ChromeDriver.FindElementByXPath('/html/body/div[44]').length -ne 0)
-        {
-            write-host "Password changed successfully"
-            Endfunction '200 - Change Password Success'
-        }
-        else
-        {
-            write-host "Not detected any success prompt, checking failure pop-up"
-        }
+{
+    write-host "Password changed successfully"
+    Endfunction '200 - Change Password Success'
+}
+else
+{
+    write-host "Not detected any success prompt, checking failure pop-up"
+}
 ```
 
 ## Drivers
