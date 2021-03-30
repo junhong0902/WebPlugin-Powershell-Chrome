@@ -61,7 +61,7 @@ if ($ChromeDriver.FindElementByXPath('/html/body/div[44]').length -ne 0)
 }
 else
 {
-    write-host "Not detected any success prompt, checking failure pop-up"
+    write-host "Not detecting any success prompt, checking failure pop-up"
 }
 ```
 
