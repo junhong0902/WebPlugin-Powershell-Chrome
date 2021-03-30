@@ -66,7 +66,7 @@ switch($strActionName)
 {
     'verifypass'
     {
-		$ChromeDriver = New-Object OpenQA.Selenium.Chrome.ChromeDriver($ChromeOptions)
+        $ChromeDriver = New-Object OpenQA.Selenium.Chrome.ChromeDriver($ChromeOptions)
 		$ChromeDriver.Url = $strFullURL
 		Sleep(3)
 		#write-host $strFullURL
@@ -81,19 +81,17 @@ switch($strActionName)
 		}
 		
 		$ChromeDriver.FindElementById('dijit_form_TextBox_1').SendKeys($strPwd)
+        Sleep(1)
         $ChromeDriver.FindElementById('authTypeId').SendKeys("Internal");
-        
+        Sleep(1)
         $ChromeDriver.FindElementById('loginPage_loginSubmit_label').Click()
 
         Sleep(10)
         $ChromeDriver.FindElementById('carousel-next').Click()
-        #Sleep(10)
-		#$ChromeDriver.FindElementById('dijit_form_TextBox_1').SendKeys([OpenQA.Selenium.Keys]::TAB + [OpenQA.Selenium.Keys]::ENTER + [OpenQA.Selenium.Keys]::ENTER)
-		
+		Sleep(10)
 		try
 		{
             $ChromeDriver.FindElementById('bs-example-navbar-collapse-1')
-			#$ChromeDriver.FindElementByXPath('/html/body/div/div/div/div[2]/main/div/div/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
 		}
 		catch
 		{
@@ -109,7 +107,7 @@ switch($strActionName)
 		$ChromeDriver = New-Object OpenQA.Selenium.Chrome.ChromeDriver($ChromeOptions)
 		$ChromeDriver.Url = $strFullURL
 		Sleep(3)
-		#write-host $strFullURL
+		write-host $strFullURL
 		try
 		{
 			$ChromeDriver.FindElementById('dijit_form_TextBox_0').SendKeys($strLogonUserName)
@@ -121,23 +119,16 @@ switch($strActionName)
 		}
 		
 		$ChromeDriver.FindElementById('dijit_form_TextBox_1').SendKeys($strLogonPwd)
+        Sleep(1)
         $ChromeDriver.FindElementById('authTypeId').SendKeys("Internal");
-        
+        Sleep(1)
         $ChromeDriver.FindElementById('loginPage_loginSubmit_label').Click()
-        write-host "11111111111111111"
-        write-host $strLogonUserName
-        write-host "11111111111111111"
-        write-host $strLogonPwd
         Sleep(10)
         $ChromeDriver.FindElementById('carousel-next').Click()
-        write-host "22222222222222222"
-        #Sleep(10)
-		#$ChromeDriver.FindElementById('dijit_form_TextBox_1').SendKeys([OpenQA.Selenium.Keys]::TAB + [OpenQA.Selenium.Keys]::ENTER + [OpenQA.Selenium.Keys]::ENTER)
-		
+		Sleep(10)
 		try
 		{
             $ChromeDriver.FindElementById('bs-example-navbar-collapse-1')
-			#$ChromeDriver.FindElementByXPath('/html/body/div/div/div/div[2]/main/div/div/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
 		}
 		catch
 		{
@@ -165,15 +156,14 @@ switch($strActionName)
 		}
 		
 		$ChromeDriver.FindElementById('dijit_form_TextBox_1').SendKeys($strLogonPwd)
+        Sleep(1)
         $ChromeDriver.FindElementById('authTypeId').SendKeys("Internal")
-        
+        Sleep(1)
         $ChromeDriver.FindElementById('loginPage_loginSubmit_label').Click()
 
-        Sleep(20)
+        Sleep(10)
         $ChromeDriver.FindElementById('carousel-next').Click()
-        #Sleep(10)
-		#$ChromeDriver.FindElementById('dijit_form_TextBox_1').SendKeys([OpenQA.Selenium.Keys]::TAB + [OpenQA.Selenium.Keys]::ENTER + [OpenQA.Selenium.Keys]::ENTER)
-		
+		Sleep(10)
 		try
 		{
             $ChromeDriver.FindElementById('bs-example-navbar-collapse-1')
@@ -193,34 +183,70 @@ switch($strActionName)
         $ChromeDriver.FindElementById('nacUserTable_xwtTableContextualToolbar_FilterToggleButton').Click()
         Sleep(3)
         $ChromeDriver.FindElementById('xwt_widget_table__ByExampleWidget_1').SendKeys($strUserName)
-        Sleep(8)
-        write-host "1111111111111111111111111111changepass"
+        Sleep(5)
         $ChromeDriver.FindElementByXPath('//*[@id="nacUserTable"]/div[4]/div[2]/div[2]/div/table/tbody/tr/td[1]/div/div').SendKeys([OpenQA.Selenium.Keys]::ENTER)
-        #$ChromeDriver.FindElementByXPath('//*[@id="nacUserTable"]/div[4]/div[2]/div[2]/div/table/tbody/tr/td[1]/div/div').Click()
-        #$ChromeDriver.FindElementByXPath('//*[@id="nacUserTable"]/div[4]/div[2]/div[2]/div/table/tbody/tr/td[1]/div/div/input').Click()
-        write-host "2222222222222222222222222"
+        write-host "Successfully select user\n"
 
 		try
 		{
      
             Sleep(2)
             $ChromeDriver.FindElementById('nacUserEditBtn_label').Click()
-            Sleep(3)
-            write-host "3333333333333333333333333333"
+            Sleep(1)
             $ChromeDriver.FindElementById('nsfUserPwd').SendKeys($strNewPwd)
+            Sleep(1)
             $ChromeDriver.FindElementById('nsfUserPwd2').SendKeys($strNewPwd)
+            Sleep(1)
             
             $ChromeDriver.FindElementById('submitBtn_label').Click()
+            Sleep(1)
 		}
 		catch
 		{
-			Endfunction '401 - Unauthorized here'
+			Endfunction '401 - Unauthorized'
             break
 		}
 		
-		Sleep(3)
+        Sleep(1)
 
-		Endfunction '200 - Change Password Success'
+        if ($ChromeDriver.FindElementByXPath('/html/body/div[44]').length -ne 0)
+        {
+            write-host "Password changed successfully"
+            Endfunction '200 - Change Password Success'
+        }
+        else
+        {
+            write-host "Not detected any success prompt, checking failure pop-up"
+        }
+
+		Sleep(3)
+           
+
+        #Try to catch for password change failure
+        try
+		{
+            Sleep(2)
+            $ChromeDriver.FindElementByXPath('/html/body/div[47]/div/div/div[2]/div')
+            Sleep(1)
+            $ChromeDriver.FindElementById('xwt_widget_form_TextButton_10').Click()
+            Sleep(2)
+            #Redirect somewhere else before logging out. (pop up blocking logout)
+            $ChromeDriver.FindElementByXPath('/html/body/div[39]/div[1]/div/ul/ul/li[1]/a').Click()
+            Sleep(2)
+            $ChromeDriver.FindElementByXPath('/html/body/div[48]/div/div/div[4]/div/button[2]').Click()
+
+            Endfunction 'Invalid New Password'
+            
+		}
+		catch
+		{
+            
+			Endfunction '200 - Change Password Success'
+            break
+		}
+        
+        #Endfunction 'Invalid New Password'
+		
 	}
 
 
