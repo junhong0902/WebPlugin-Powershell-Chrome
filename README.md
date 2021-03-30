@@ -54,15 +54,19 @@ $ChromeDriver.FindElementByTagName('body').SendKeys([OpenQA.Selenium.Keys]::TAB 
 
 ##### Verify if element exists
 ```
-if ($ChromeDriver.FindElementByXPath('/html/body/div[44]').length -ne 0)
+#If element not found will invoke exception, so need to do it by catch
+try
 {
-    write-host "Password changed successfully"
-    Endfunction '200 - Change Password Success'
+    if ($ChromeDriver.FindElementByName('session[password]1').length -ne 0)
+    {
+        write-host "Password changed successfully"
+    }
 }
-else
+catch
 {
     write-host "Not detecting any success prompt, checking failure pop-up"
 }
+		
 ```
 
 ## Drivers
